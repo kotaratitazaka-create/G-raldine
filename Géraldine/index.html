@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ouakondja Géraldine Zoungoula Kokouendo | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Ouakondja Géraldine Zoungoula Kokouendo, cadre supérieure de l’administration publique spécialisée en gouvernance, finances publiques et renforcement des capacités."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --bg-2: #111b2d;
+        --panel: #122033;
+        --panel-soft: rgba(255,255,255,0.04);
+        --line: rgba(255,255,255,0.08);
+        --text: #edf4ff;
+        --text-soft: #cdd8ea;
+        --muted: #a6b7d6;
+        --accent: #d9a65f;
+        --accent-2: #f0c98e;
+        --success: #9ad1b5;
+        --shadow: 0 30px 80px rgba(8,14,26,0.45);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background:
+          radial-gradient(circle at 15% 10%, rgba(217,166,95,0.18), transparent 22%),
+          linear-gradient(180deg, var(--bg) 0%, #0f1728 100%);
+        color: var(--text);
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      ul { margin: 0; padding-left: 1.1rem; }
+      .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(11,16,32,0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+      }
+      .nav {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        position: relative;
+      }
+      .brand {
+        font-size: clamp(1.5rem, 1.4vw, 2.1rem);
+        font-weight: 800;
+        letter-spacing: -0.05em;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        color: var(--text-soft);
+        font-size: 0.95rem;
+      }
+      .nav-portrait {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 8px);
+        width: 190px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.12);
+        box-shadow: 0 18px 40px rgba(3,8,18,0.35);
+        background: rgba(11,16,32,0.7);
+        z-index: 25;
+      }
+      .nav-portrait img {
+        width: 100%;
+        display: block;
+        height: 210px;
+        object-fit: cover;
+      }
+      .nav-links a:hover { color: var(--accent-2); }
+      .menu-toggle { display: none; }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 46px;
+        padding: 90px 0 50px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        padding: 10px 16px;
+        border: 1px solid rgba(217,166,95,0.35);
+        border-radius: 999px;
+        background: rgba(217,166,95,0.08);
+        color: var(--accent-2);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+      h1 {
+        margin: 18px 0 10px;
+        font-size: clamp(2.7rem, 6vw, 5.3rem);
+        line-height: 0.96;
+        letter-spacing: -0.06em;
+      }
+      .subtitle {
+        font-size: clamp(1.15rem, 2vw, 2rem);
+        margin: 0;
+        color: var(--accent-2);
+        font-weight: 700;
+      }
+      .lead {
+        margin: 22px 0 0;
+        max-width: 640px;
+        color: var(--text-soft);
+        line-height: 1.8;
+        font-size: 1.08rem;
+      }
+      .cta-row {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 24px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+        cursor: pointer;
+      }
+      .btn:hover,
+      .btn:focus-visible {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 18px 30px rgba(16, 24, 40, 0.28);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        color: #1f180d;
+        box-shadow: 0 18px 40px rgba(217,166,95,0.25);
+      }
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        background: linear-gradient(135deg, #f0c98e 0%, #e2b46b 100%);
+      }
+      .btn-secondary {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+      }
+      .btn-secondary:hover,
+      .btn-secondary:focus-visible {
+        background: rgba(255,255,255,0.06);
+        border-color: rgba(217,166,95,0.55);
+      }
+      .btn-download {
+        background: linear-gradient(135deg, #1f7ea8 0%, #123d57 100%);
+        color: white;
+        border: 1px solid rgba(255,255,255,0.15);
+        box-shadow: 0 16px 32px rgba(18,61,87,0.2);
+      }
+      .btn-download:hover,
+      .btn-download:focus-visible {
+        background: linear-gradient(135deg, #2e9bc7 0%, #184e70 100%);
+        border-color: rgba(255,255,255,0.3);
+      }
+      .meta-row {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 22px;
+        color: var(--text-soft);
+      }
+      .meta-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+      }
+      .meta-item strong { color: var(--text); }
+      .hero-panel {
+        background: linear-gradient(180deg, rgba(18,32,51,0.95), rgba(12,19,30,0.95));
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+      .hero-panel .mini-label {
+        color: var(--muted);
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .hero-panel .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 22px;
+        margin-top: 20px;
+        background: linear-gradient(135deg, rgba(217,166,95,0.18), rgba(255,255,255,0.05));
+        border: 1px solid rgba(217,166,95,0.3);
+        display: grid;
+        place-items: center;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--accent-2);
+      }
+      .hero-panel h2 {
+        margin: 16px 0 8px;
+        font-size: 1.7rem;
+      }
+      .hero-panel .panel-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+        color: var(--text-soft);
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+      .stat-card {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px 18px;
+      }
+      .stat-card strong {
+        display: block;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        letter-spacing: -0.06em;
+      }
+      .stat-card span {
+        display: block;
+        margin-top: 6px;
+        color: var(--text-soft);
+      }
+      .feature-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 18px;
+        margin-top: 24px;
+      }
+      .feature-item {
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        border-radius: 18px;
+        padding: 22px 20px;
+      }
+      .feature-item .kicker {
+        color: var(--accent-2);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+      }
+      .feature-item h3 {
+        margin: 12px 0 8px;
+        font-size: 1.22rem;
+      }
+      .feature-item p {
+        margin: 0;
+        color: var(--text-soft);
+        line-height: 1.8;
+      }
+      .section { padding: 94px 0; }
+      .section-heading {
+        margin-bottom: 28px;
+      }
+      .section-heading p {
+        margin: 0 0 10px;
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent-2);
+      }
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(2.1rem, 4vw, 3.2rem);
+        letter-spacing: -0.05em;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 24px;
+        align-items: center;
+      }
+      .portrait-card {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, #0d5d7d 0%, #0b4f70 100%);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        padding: 28px 28px 18px;
+      }
+      .portrait-stage {
+        position: relative;
+        background: #ececec;
+        border-radius: 18px 18px 0 0;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.18);
+      }
+      .portrait-stage img {
+        display: block;
+        width: 100%;
+        height: min(540px, 60vw);
+        object-fit: cover;
+        object-position: center top;
+        filter: saturate(0.85) contrast(1.02) brightness(0.94);
+      }
+      .portrait-info {
+        position: relative;
+        margin-top: -14px;
+        background: rgba(255,255,255,0.88);
+        color: #111827;
+        border-radius: 16px 16px 10px 10px;
+        padding: 18px 18px 14px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 18px;
+        box-shadow: 0 16px 30px rgba(10, 24, 36, 0.12);
+      }
+      .portrait-info h3 {
+        margin: 0;
+        font-size: clamp(1.5rem, 2.8vw, 2.6rem);
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+      }
+      .portrait-info p {
+        margin: 10px 0 0;
+        color: rgba(17,24,39,0.78);
+        line-height: 1.5;
+      }
+      .flag-badge {
+        display: none;
+      }
+      .flag-pattern {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 42px;
+        background:
+          linear-gradient(135deg, rgba(255,255,255,0.18) 0 22%, transparent 22% 28%, rgba(255,255,255,0.18) 28% 48%, transparent 48% 54%, rgba(255,255,255,0.18) 54% 74%, transparent 74% 80%, rgba(255,255,255,0.18) 80% 100%);
+        opacity: 0.7;
+      }
+      .card {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 26px;
+      }
+      .about-copy {
+        color: var(--text-soft);
+        line-height: 1.85;
+      }
+      .about-copy p { margin: 0 0 18px; }
+      .facts {
+        margin-top: 20px;
+        display: grid;
+        gap: 14px;
+      }
+      .fact {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+      .fact strong { color: var(--text); }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 18px;
+      }
+      .skill-card {
+        padding: 22px 20px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+      }
+      .skill-card .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .skill-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 6px rgba(217,166,95,0.12);
+      }
+      .skill-card h3 {
+        margin: 18px 0 0;
+        font-size: 1.1rem;
+      }
+      .timeline {
+        display: grid;
+        gap: 18px;
+      }
+      .timeline-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 20px;
+        padding: 12px 0 12px 22px;
+        border-left: 1px solid rgba(217,166,95,0.35);
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 26px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 7px rgba(217,166,95,0.12);
+      }
+      .timeline-date {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        margin-top: 18px;
+        background: rgba(217,166,95,0.08);
+        border: 1px solid rgba(217,166,95,0.25);
+        color: var(--accent-2);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.78rem;
+      }
+      .timeline-content {
+        padding: 22px 24px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+      }
+      .timeline-content h3 {
+        margin: 0 0 8px;
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
+      }
+      .timeline-content .meta {
+        margin: 0 0 8px;
+        color: var(--accent-2);
+        font-weight: 700;
+      }
+      .timeline-content p {
+        margin: 0;
+        color: var(--text-soft);
+        line-height: 1.8;
+      }
+      .engagement-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 18px;
+      }
+      .engagement-item {
+        padding: 22px 18px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+      }
+      .engagement-item h3 {
+        margin: 0 0 10px;
+        font-size: 1.1rem;
+      }
+      .engagement-item p {
+        margin: 0;
+        color: var(--text-soft);
+        line-height: 1.8;
+      }
+      .quote-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+      .quote-card {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 24px 20px;
+      }
+      .quote-card p {
+        margin: 0 0 14px;
+        color: var(--text-soft);
+        line-height: 1.8;
+      }
+      .quote-card strong {
+        display: block;
+        color: var(--text);
+      }
+      .quote-card span {
+        color: var(--accent-2);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .cta-banner {
+        margin-top: 28px;
+        padding: 26px 28px;
+        border-radius: 24px;
+        border: 1px solid rgba(217,166,95,0.28);
+        background: linear-gradient(135deg, rgba(217,166,95,0.12), rgba(18,32,51,0.8));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+      .cta-banner h3 {
+        margin: 0;
+        font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+        letter-spacing: -0.05em;
+      }
+      .cta-banner p {
+        margin: 8px 0 0;
+        color: var(--text-soft);
+      }
+      .contact-card {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 22px;
+        background: linear-gradient(135deg, rgba(18,32,51,0.96), rgba(9,13,23,0.96));
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+      .contact-copy h2 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        letter-spacing: -0.05em;
+      }
+      .contact-copy p {
+        margin: 0;
+        color: var(--text-soft);
+        line-height: 1.8;
+      }
+      .contact-list {
+        margin-top: 22px;
+        display: grid;
+        gap: 10px;
+      }
+      .contact-list a {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .contact-form {
+        display: grid;
+        gap: 18px;
+      }
+      .contact-form label {
+        display: grid;
+        gap: 8px;
+        color: var(--text-soft);
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        color: var(--text);
+        padding: 14px 16px;
+      }
+      .footer {
+        padding: 20px 0 40px;
+        color: var(--text-soft);
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+      .socials { display: flex; gap: 16px; }
+      .contact-list {
+        margin-top: 22px;
+        display: grid;
+        gap: 12px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+      }
+      .copy-btn {
+        appearance: none;
+        border: 1px solid rgba(217,166,95,0.4);
+        background: rgba(217,166,95,0.08);
+        color: var(--accent-2);
+        border-radius: 999px;
+        padding: 7px 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .toast {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        background: rgba(12,19,30,0.96);
+        border: 1px solid rgba(255,255,255,0.08);
+        color: var(--text);
+        padding: 12px 16px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        pointer-events: none;
+        z-index: 100;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (max-width: 980px) {
+        .hero, .about-grid, .contact-card, .stats-grid, .feature-strip, .quote-grid { grid-template-columns: 1fr; }
+        .cta-banner { flex-direction: column; align-items: flex-start; }
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          left: 16px;
+          right: 16px;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 18px 20px;
+          background: rgba(11,16,32,0.96);
+          border: 1px solid var(--line);
+          border-radius: 18px;
+        }
+        .nav-links.open { display: flex; }
+        .menu-toggle {
+          display: inline-flex;
+          width: 44px;
+          height: 44px;
+          border-radius: 12px;
+          border: 1px solid var(--line);
+          background: rgba(255,255,255,0.02);
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 5px;
+          cursor: pointer;
+        }
+        .menu-toggle span { display: block; width: 18px; height: 2px; background: var(--text); border-radius: 2px; }
+      }
+      @media (max-width: 640px) {
+        .cta-row { flex-direction: column; }
+        .btn { width: 100%; }
+        .skills-grid, .engagement-list, .timeline-item { grid-template-columns: 1fr; }
+        .timeline-item { padding-left: 18px; }
+        .footer-inner { flex-direction: column; text-align: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav container" aria-label="Navigation principale">
+        <a href="#accueil" class="brand">Géraldine.</a>
+        <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+          <a href="#accueil">Accueil</a>
+          <a href="#profil">Profil</a>
+          <a href="#expertises">Expertises</a>
+          <a href="#experience">Expérience</a>
+          <a href="#formation">Formation</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-portrait" aria-label="Portrait de Géraldine">
+          <img src="src/image/photo_seule_nette.jpg" alt="Portrait de Ouakondja Géraldine Zoungoula Kokouendo" />
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container hero" id="accueil">
+        <div>
+          <span class="eyebrow">Disponibilité immédiate • France / Afrique centrale</span>
+          <h1>OUAKONDJA<br />GÉRALDINE</h1>
+          <p class="subtitle">Gouvernance • Finances publiques • Renforcement des capacités</p>
+          <p class="lead">
+            Cadre supérieure de l’administration publique, spécialisée en gestion financière publique, gouvernance institutionnelle, coordination administrative et ingénierie de formation.
+          </p>
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-primary">Contactez-moi</a>
+            <a href="#profil" class="btn btn-secondary">Découvrir mon profil</a>
+            <a href="cv_geraldine.pdf" class="btn btn-download" download> Télécharger mon CV </a>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>📍</strong> <span>France • RCA</span></div>
+            <div class="meta-item"><strong>📞</strong> <span>+33 7 83 54 84 23</span></div>
+            <div class="meta-item"><strong>✉️</strong> <span>ouakondja@yahoo.fr</span></div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <strong>30+</strong>
+              <span>années d’expérience</span>
+            </div>
+            <div class="stat-card">
+              <strong>10+</strong>
+              <span>missions de conseil</span>
+            </div>
+            <div class="stat-card">
+              <strong>15</strong>
+              <span>cadres formés</span>
+            </div>
+            <div class="stat-card">
+              <strong>2</strong>
+              <span>nationalités / 3 langues</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Informations clés">
+          <div class="mini-label">Profil stratégique</div>
+          <div class="avatar">G</div>
+          <h2>Ouakondja Géraldine Zoungoula Kokouendo</h2>
+          <div class="panel-list">
+            <span>Nationalités : française et centrafricaine</span>
+            <span>Mobilité : France – République centrafricaine</span>
+            <span>Disponibilité : immédiate</span>
+            <span>Langues : français, anglais, allemand (notions), sango (courant)</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section container reveal" id="profil">
+        <div class="section-heading">
+          <p>Profil</p>
+          <h2>Une expérience publique au service de la gouvernance et du développement</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="portrait-card">
+            <div class="portrait-stage">
+              <img
+                src="src/image/photo_seule_nette.jpg"
+                alt="Ouakondja Géraldine Zoungoula Kokouendo"
+              />
+            </div>
+            <div class="portrait-info">
+              <div>
+                <h3>Ouakondja Géraldine<br />KOKOUENDO ZOUNGOULA</h3>
+                <p>Ambassadrice WUSME (Union Mondiale des Petites et Moyennes Entreprises) auprès de la République Centrafricaine</p>
+              </div>
+              <div class="flag-badge" aria-label="Drapeau centrafricain">
+                <span class="cross"></span>
+              </div>
+            </div>
+            <div class="flag-pattern"></div>
+          </div>
+
+          <div class="card about-copy">
+            <p>
+              Plus de 30 années d’expérience au sein de l’administration publique française (France Travail – ex-ANPE), spécialisée en gestion financière publique, contrôle interne, coordination administrative à l’échelle nationale et renforcement des capacités institutionnelles.
+            </p>
+            <p>
+              Je conjugue une double compétence en finances publiques et en gouvernance institutionnelle, renforcée par une expertise en médiation, stratégie négociationnelle, diplomatie, et ingénierie de formation. Mon ancrage opérationnel France–Afrique centrale me permet d’articuler les standards internationaux avec une compréhension fine des contextes locaux.
+            </p>
+            <p>
+              Mon parcours m’a conduite à intervenir dans la conception de formations, le diagnostic organisationnel, l’animation de processus de changement et le renforcement des capacités des acteurs publics et associatifs.
+            </p>
+          </div>
+
+          <div class="card" style="grid-column: 1 / -1;">
+            <div class="facts">
+              <div class="fact"><span>Nationalités</span><strong>Française et centrafricaine</strong></div>
+              <div class="fact"><span>Mobilité</span><strong>France – RCA – Bénin – Togo</strong></div>
+              <div class="fact"><span>Disponibilité</span><strong>Immédiate</strong></div>
+              <div class="fact"><span>Courriel</span><strong>ouakondja@yahoo.fr</strong></div>
+              <div class="fact"><span>Téléphone</span><strong>+33 7 83 54 84 23</strong></div>
+              <div class="fact"><span>Portable RCA</span><strong>+236 74 63 84 34</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container reveal" id="expertises">
+        <div class="section-heading">
+          <p>Expertises</p>
+          <h2>Domaines de spécialisation</h2>
+        </div>
+
+        <div class="feature-strip">
+          <div class="feature-item">
+            <div class="kicker">Stratégie</div>
+            <h3>Gouvernance publique</h3>
+            <p>Accompagnement à la mise en œuvre de politiques, de procédures et de mécanismes de pilotage institutionnel.</p>
+          </div>
+          <div class="feature-item">
+            <div class="kicker">Finance</div>
+            <h3>Contrôle et performance</h3>
+            <p>Supervision des flux financiers, gestion budgétaire et mise en place de dispositifs de contrôle interne.</p>
+          </div>
+          <div class="feature-item">
+            <div class="kicker">Impact</div>
+            <h3>Renforcement des capacités</h3>
+            <p>Conception de formations, accompagnement des équipes et mobilisation des savoir-faire locaux.</p>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="top"><span class="skill-dot"></span><span>Gestion publique</span></div>
+            <h3>Gestion financière publique et contrôle interne</h3>
+          </div>
+          <div class="skill-card">
+            <div class="top"><span class="skill-dot"></span><span>Gouvernance</span></div>
+            <h3>Gouvernance institutionnelle et renforcement des capacités</h3>
+          </div>
+          <div class="skill-card">
+            <div class="top"><span class="skill-dot"></span><span>Coordination</span></div>
+            <h3>Coordination administrative et pilotage d’équipes</h3>
+          </div>
+          <div class="skill-card">
+            <div class="top"><span class="skill-dot"></span><span>Ingénierie</span></div>
+            <h3>Ingénierie de formation et pédagogie enracinée africaine</h3>
+          </div>
+          <div class="skill-card">
+            <div class="top"><span class="skill-dot"></span><span>Dialogue</span></div>
+            <h3>Diplomatie, médiation et stratégie négociationnelle</h3>
+          </div>
+          <div class="skill-card">
+            <div class="top"><span class="skill-dot"></span><span>Genre</span></div>
+            <h3>Genre et autonomisation économique des femmes</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container reveal" id="experience">
+        <div class="section-heading">
+          <p>Expérience</p>
+          <h2>Parcours professionnel</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Depuis 2008</div>
+            <div class="timeline-content">
+              <h3>Gestionnaire comptable</h3>
+              <p class="meta">Direction financière, siège national — France Travail (ex-ANPE / Pôle emploi)</p>
+              <p>
+                Gestion et sécurisation des flux financiers publics à l’échelle nationale. Suivi de l’exécution financière de marchés publics. Application des procédures d’audit, de contrôle interne, conformité réglementaire et transparence budgétaire.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">1999 – 2008</div>
+            <div class="timeline-content">
+              <h3>Responsable Pôle Appui et Gestion</h3>
+              <p class="meta">France Travail (ex-ANPE)</p>
+              <p>
+                Coordination administrative et encadrement fonctionnel d’équipes. Mise en œuvre des procédures institutionnelles. Interface stratégique entre directions opérationnelles et collectivités territoriales pour la mise en œuvre des politiques de l’emploi.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2023</div>
+            <div class="timeline-content">
+              <h3>Consultante-formatrice</h3>
+              <p class="meta">EXCELLENCES CONSULTING / ACFPE, Bangui</p>
+              <p>
+                Conception et animation d’une formation pour 15 cadres de l’Agence Centrafricaine pour la Formation Professionnelle et l’Emploi. Diagnostic organisationnel participatif, renforcement des capacités collectives et appropriation d’outils opérationnels.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">1991 – 1998</div>
+            <div class="timeline-content">
+              <h3>Parcours antérieur — secteur bancaire</h3>
+              <p class="meta">Banque Carrefour ; Crédit Mutuel (service SWIFT)</p>
+              <p>
+                Conseillère clientèle et opérations SWIFT, avec une solide expérience de gestion administrative et relation client dans un environnement financier exigeant.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container reveal" id="formation">
+        <div class="section-heading">
+          <p>Formation</p>
+          <h2>Diplômes et formations académiques</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2025</div>
+            <div class="timeline-content">
+              <h3>Master 2 – Relations internationales, Diplomatie et Gouvernance</h3>
+              <p class="meta">Université Continentale de Libreville (Gabon)</p>
+              <p>Mention Très Bien (18/20). Mémoire : adaptation des modèles pédagogiques en Afrique et communication non violente.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2008 – 2010</div>
+            <div class="timeline-content">
+              <h3>Prep’ENA</h3>
+              <p class="meta">Institut de la Gestion Publique et du Développement Économique (IGPDE)</p>
+              <p>Formation supérieure en gestion publique et finances de l’État.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container reveal">
+        <div class="section-heading">
+          <p>Engagements</p>
+          <h2>Engagements institutionnels et associatifs</h2>
+        </div>
+
+        <div class="engagement-list">
+          <div class="engagement-item">
+            <h3>Ambassadrice WUSME</h3>
+            <p>Promotion de l’entrepreneuriat en République centrafricaine.</p>
+          </div>
+          <div class="engagement-item">
+            <h3>Coordinatrice A.F.N.V.</h3>
+            <p>Autonomisation économique des femmes par les tontines et l’entraide solidaire.</p>
+          </div>
+          <div class="engagement-item">
+            <h3>Rapporteur général</h3>
+            <p>Dialogue républicain à Bangui (2022), synthèse et rédaction du rapport général.</p>
+          </div>
+        </div>
+
+        <div class="quote-grid">
+          <div class="quote-card">
+            <p>« Une chef de projet à l’écoute des institutions, capable de faire converger les enjeux publics, humains et de performance. »</p>
+            <strong>Leadership</strong>
+            <span>Gestion publique</span>
+          </div>
+          <div class="quote-card">
+            <p>« Son approche allie rigueur administrative et sens du terrain, un équilibre rare dans la gouvernance des organisations. »</p>
+            <strong>Rigueur</strong>
+            <span>Contrôle interne</span>
+          </div>
+          <div class="quote-card">
+            <p>« Une capacité remarquable à structurer des formations et à faire grandir les compétences des équipes locales. »</p>
+            <strong>Transmission</strong>
+            <span>Renforcement des capacités</span>
+          </div>
+        </div>
+
+        <div class="cta-banner">
+          <div>
+            <h3>Prêt à mobiliser une expertise publique, stratégique et humaine ?</h3>
+            <p>Disponible immédiatement pour des missions de conseil, de coordination et de formation.</p>
+          </div>
+          <a href="#contact" class="btn btn-primary">Demander un contact</a>
+        </div>
+      </section>
+
+      <section class="section container reveal" id="contact">
+        <div class="contact-card">
+          <div class="contact-copy">
+            <p style="margin:0 0 10px; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent-2); font-size:0.8rem;">Contact</p>
+            <h2>Travaillons ensemble sur des enjeux de gouvernance, de développement et de transformation publique.</h2>
+            <p>
+              Disponible immédiatement pour des missions en gouvernance publique, renforcement des capacités institutionnelles, gestion financière publique, conseil stratégique et ingénierie de formation.
+            </p>
+            <div class="contact-list">
+              <div class="contact-item">
+                <a href="mailto:ouakondja@yahoo.fr">ouakondja@yahoo.fr</a>
+                <button class="copy-btn" type="button" data-copy="ouakondja@yahoo.fr">Copier</button>
+              </div>
+              <div class="contact-item">
+                <a href="tel:+33783548423">+33 7 83 54 84 23</a>
+                <button class="copy-btn" type="button" data-copy="+33783548423">Copier</button>
+              </div>
+              <div class="contact-item">
+                <a href="tel:+23674638434">+236 74 63 84 34</a>
+                <button class="copy-btn" type="button" data-copy="+23674638434">Copier</button>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <label>
+              <span>Nom</span>
+              <input type="text" name="name" placeholder="Votre nom" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="Votre email" required />
+            </label>
+            <label>
+              <span>Objet</span>
+              <input type="text" name="subject" placeholder="Objet de votre message" required />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Décrivez votre projet ou votre besoin..." required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Envoyer le message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>© 2026 Ouakondja Géraldine Zoungoula Kokouendo</span>
+        <div class="socials">
+          <a href="mailto:ouakondja@yahoo.fr">Email</a>
+          <a href="tel:+33783548423">Téléphone</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script>
+      const toast = document.getElementById('toast');
+      const showToast = (message) => {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(showToast.timer);
+        showToast.timer = setTimeout(() => toast.classList.remove('show'), 2200);
+      };
+
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+        navLinks.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      const revealItems = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.14 });
+        revealItems.forEach((item) => revealObserver.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add('visible'));
+      }
+
+      document.querySelectorAll('.copy-btn').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const value = button.dataset.copy || '';
+          if (!value) return;
+          try {
+            await navigator.clipboard.writeText(value);
+            showToast('Coordonnées copiées');
+          } catch (error) {
+            showToast('Copie non disponible');
+          }
+        });
+      });
+
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const data = new FormData(form);
+          const name = (data.get('name') || '').toString().trim();
+          const email = (data.get('email') || '').toString().trim();
+          const subject = (data.get('subject') || '').toString().trim();
+          const message = (data.get('message') || '').toString().trim();
+
+          const body = encodeURIComponent(
+            `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+          );
+          const subjectText = encodeURIComponent(subject || 'Demande de contact');
+
+          const btn = form.querySelector('button[type="submit"]');
+          if (btn) {
+            const oldText = btn.textContent;
+            btn.textContent = 'Message envoyé';
+            btn.disabled = true;
+            setTimeout(() => {
+              btn.textContent = oldText;
+              btn.disabled = false;
+              form.reset();
+            }, 1800);
+          }
+
+          window.location.href = `mailto:ouakondja@yahoo.fr?subject=${subjectText}&body=${body}`;
+          showToast('Préparation du message...');
+        });
+      }
+    </script>
+  </body>
+</html>
