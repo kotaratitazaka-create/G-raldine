@@ -1,3 +1,7 @@
 node_modules/
 .DS_Store
 npm-debug.log*
+*.zip
+merged_cv.txt
+test_pdf.pdf
+infos_cv_extrait.txt
